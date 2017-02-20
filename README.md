@@ -1,2 +1,2 @@
 # Reinvent-The-Wheel
-Practice Practice and Practice
+Lets make our algorithms very strong!! cheers!!
