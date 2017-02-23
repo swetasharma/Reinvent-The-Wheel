@@ -9,29 +9,34 @@ Result = (-2,10)
 */
 public class FindPairsEqualsToSum{
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in);
-		int n = input.nextInt();
-		int[] arrOfInputs = new int[n];
-		for(int i=0; i < n; i++){
+		/*Scanner input = new Scanner(System.in);
+		int n = input.nextInt();*/
+		//int[] arrOfInputs = new int[n];
+		int[] arrOfInputs = {-3,-2,-1,1,2,5,10,11,12,13,15};
+		/*for(int i=0; i < n; i++){
 			arrOfInputs[i] = input.nextInt();
-		}
+		}*/
 		System.out.println("Enter the sum");
-		int sum = input.nextInt();
+		//int sum = input.nextInt();
+		int sum = 12;
 		pairsEqualsToSum(arrOfInputs, sum);
 	}
 	public static void pairsEqualsToSum(int[] arrOfInputs, int sum) {
 		int j = (arrOfInputs.length - 1);
-		for(int i = 0; i <= j; i++, j--){
-			System.out.println("in while "+ i +" "+j);
-			if( (arrOfInputs[i] + arrOfInputs[j]) == sum ){		
-				//System.out.println("in first if");
-				System.out.println("("+arrOfInputs[i] + "," + arrOfInputs[j]+")");
-			}else if( (arrOfInputs[j] > sum) && (arrOfInputs[i] < 0) ){
+		int i = 0;		
+			while( i <= j){
+			if( (arrOfInputs[j] > sum) && (arrOfInputs[i] < 0) && (arrOfInputs[i] + arrOfInputs[j]) != sum){
 				i = i + 1;
-				//System.out.println("in second if");
-			}else if( (arrOfInputs[j] > sum) && (arrOfInputs[i] >= 0) ){
+			}else if((arrOfInputs[j] > sum) && (arrOfInputs[i] < 0) && (arrOfInputs[i] + arrOfInputs[j]) == sum){
+				System.out.println("("+arrOfInputs[i] + "," + arrOfInputs[j]+")");
+				i = i + 1;
 				j = j - 1;
-				//System.out.println("in third if");
+			}else if((arrOfInputs[j] <= sum) && (arrOfInputs[i] > 0) && (arrOfInputs[i] + arrOfInputs[j]) == sum){
+				System.out.println("("+arrOfInputs[i] + "," + arrOfInputs[j]+")");
+				i = i + 1;
+				j = j - 1;
+			}else if((arrOfInputs[j] <= sum) && (arrOfInputs[i] > 0) && (arrOfInputs[i] + arrOfInputs[j]) != sum){
+				j = j - 1;
 			}
 		}
 	}
