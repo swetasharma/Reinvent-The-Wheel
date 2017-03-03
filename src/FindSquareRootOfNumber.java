@@ -1,4 +1,3 @@
-
 public class FindSquareRootOfNumber {
 	public static void main(String[] args) {
 		int[] arrOfSquareNumbers = {1, 4, 9, 16, 25, 36, 49, 81, 100, 114};
