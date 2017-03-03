@@ -22,6 +22,7 @@ public class BomberAlgo {
 			int secondPointer = 1;
 			char[] arrRemovedRepetitiveCharacters = null;
 			while( firstPointer < input.length ){
+				System.out.println(firstPointer + "------------" + secondPointer);
 				if(input[firstPointer] != input[secondPointer]){
 					firstPointer  = firstPointer + 1;
 					secondPointer = secondPointer + 1;
